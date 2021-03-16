@@ -12,6 +12,7 @@
         <script type="text/javascript">
             storage.add('b', 2);
         </script>
+        
         <% const alreadyIncludedFiles = new Set(compilation.entrypoints.get('init').getFiles()) %> 
         <% for (const link of htmlWebpackPlugin.files.js.filter(function(item) { return !alreadyIncludedFiles.has(item) } )) { %>
         <script type="text/javascript" src="<%= link %>"></script>
